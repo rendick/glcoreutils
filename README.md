@@ -26,13 +26,13 @@
 |rmdir |File utilities|Removes empty directories|
 |shred |File utilities|Overwrites a file to hide its contents, and optionally deletes it|
 |sync |File utilities|Flushes file system buffers|
-|touch |create file|[fc](https://github.com/renick/glcoreutils/blob/main/src/fc.go)|
+|touch |create file|[cf](https://github.com/renick/glcoreutils/blob/main/src/cf.go)|
 |truncate |File utilities|Shrink or extend the size of a file to the specified size|
 |vdir |File utilities|Is exactly like "`ls -l -b`". Files are by default listed in long format.|
 |b2sum |Text utilities|Computes and checks BLAKE2bBLAKE2b "BLAKE2b" message digest|
 |base32 |Text utilities|Encodes or decodes Base32Base32 "Base32", and prints result to standard output|
 |base64 |Text utilities|Encodes or decodes Base64Base64 "Base64", and prints result to standard output|
-|cat |Text utilities|Concatenates and prints files on the standard output|
+|cat |Text utilities|[dog](https://github.com/rendick/glcoreutils/blob/main/src/dog.go)|
 |cksum |Text utilities|Checksums IEEE Ethernet CRC-32 and count the bytes in a file.  <br>Supersedes other *sum utilities with -a option from version 9.0.|
 |comm |Text utilities|Compares two sorted files line by line|
 |csplit |Text utilities|Splits a file into sections determined by context lines|
