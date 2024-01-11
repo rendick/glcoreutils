@@ -26,7 +26,7 @@
 |rmdir |File utilities|Removes empty directories|
 |shred |File utilities|Overwrites a file to hide its contents, and optionally deletes it|
 |sync |File utilities|Flushes file system buffers|
-|touch |create file|[fc](https://github.com/GLCU/utils/blob/main/src/fc.go)|
+|touch |create file|[fc](https://github.com/renick/glcoreutils/blob/main/src/fc.go)|
 |truncate |File utilities|Shrink or extend the size of a file to the specified size|
 |vdir |File utilities|Is exactly like "`ls -l -b`". Files are by default listed in long format.|
 |b2sum |Text utilities|Computes and checks BLAKE2bBLAKE2b "BLAKE2b" message digest|
