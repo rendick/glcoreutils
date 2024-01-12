@@ -2,20 +2,43 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
+var (
+	dog_help = ` 
+Usage: dog [filename]
+
+--help or -h:     help 
+--version or -v:  version
+
+GL coreutils online: <https://github.com/rendick/glcoreutils/>
+`
+	version = "0.1v"
+)
+
+func help() {
+	fmt.Println("dog: missing file\nUsage: dog: [filename]\nTry --help for more information")
+}
+
 func main() {
-	x := os.Args[1]
-
-	if x == "--help" {
-		fmt.Println("ealjfkhl")
+	if len(os.Args) != 2 {
+		help()
+		os.Exit(0)
 	}
 
-	file, err := os.Open(x)
+	if os.Args[1] == "--help" || os.Args[1] == "-h" {
+		fmt.Println(dog_help)
+	} else if os.Args[1] == "--version" || os.Args[1] == "-v" {
+		fmt.Println(version)
+	}
+
+	filename := os.Args[1]
+
+	file, err := ioutil.ReadFile(filename)
 	if err != nil {
-		fmt.Println("sklfjshlk")
+		os.Exit(0)
 	}
-	defer file.Close()
-
+	fmt.Println(string(file))
 }
