@@ -28,17 +28,18 @@ func main() {
 		os.Exit(0)
 	}
 
-	if os.Args[1] == "--help" || os.Args[1] == "-h" {
-		fmt.Println(dog_help)
-	} else if os.Args[1] == "--version" || os.Args[1] == "-v" {
-		fmt.Println(version)
-	}
-
 	filename := os.Args[1]
 
-	file, err := ioutil.ReadFile(filename)
-	if err != nil {
-		os.Exit(0)
+	if filename == "--help" || filename == "-h" {
+		fmt.Println(dog_help)
+	} else if filename == "--version" || filename == "-v" {
+		fmt.Println(version)
+	} else {
+		file, err := ioutil.ReadFile(filename)
+		if err != nil {
+			os.Exit(0)
+		}
+		fmt.Println(string(file))
+
 	}
-	fmt.Println(string(file))
 }
