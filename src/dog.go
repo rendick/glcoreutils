@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -35,11 +36,27 @@ func main() {
 	} else if filename == "--version" || filename == "-v" {
 		fmt.Println(version)
 	} else {
-		file, err := ioutil.ReadFile(filename)
+		// Count lines
+		file_count, err := os.Open(filename)
 		if err != nil {
 			os.Exit(0)
 		}
-		fmt.Println(string(file))
 
+		// Read file
+		file, err := ioutil.ReadFile(filename)
+		fmt.Println(string(file))
+		scanner := bufio.NewScanner(file_count)
+		scanner.Split(bufio.ScanLines)
+
+		// getting the number of lines
+		var count int
+		for scanner.Scan() {
+			count++
+		}
+		if err := scanner.Err(); err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println("Number of lines in file:", count)
 	}
 }
