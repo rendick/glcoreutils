@@ -10,23 +10,23 @@
 | chgrp    | File utilities  | Changes file group ownership                                                                 |
 | chown    | File utilities  | Changes file ownership                                                                       |
 | chmod    | File utilities  | Changes the permissions of a file or directory                                               |
-| cp       | File utilities  | [cf](https://github.com/renick/glcoreutils/blob/main/src/cf.go)                              |
+| cp       | File utilities  | [cf](https://github.com/rendick/glcoreutils/blob/main/src/cf.go)                              |
 | dd       | File utilities  | Copies and converts a file                                                                   |
 | df       | File utilities  | Shows disk free space on file systems                                                        |
 | install  | File utilities  | Copies files and set attributes                                                              |
 | ln       | File utilities  | Creates a link to a file                                                                     |
-| ls       | File utilities  | [vd](https://github.com/renick/glcoreutils/blob/main/src/vf.go)                              |
+| ls       | File utilities  | [vd](https://github.com/rendick/glcoreutils/blob/main/src/vf.go)                              |
 | mkdir    | File utilities  | Creates a directory                                                                          |
 | mkfifo   | File utilities  | Makes named pipesNamed_pipe "Named pipe" FIFOs                                               |
 | mknod    | File utilities  | Makes block or character special filesDevice_node "Device node"                              |
 | mktemp   | File utilities  | Creates a temporary fileTemporary_file "Temporary file" or directory                         |
-| mv       | File utilities  | [rf](https://github.com/renick/glcoreutils/blob/main/src/rf.go)                              |
+| mv       | File utilities  | [rf](https://github.com/rendick/glcoreutils/blob/main/src/rf.go)                              |
 | realpath | File utilities  | Returns the resolved absolute or relative path for a file                                    |
-| rm       | File utilities  | [df](https://github.com/renick/glcoreutils/blob/main/src/df.go)                              |
+| rm       | File utilities  | [df](https://github.com/rendick/glcoreutils/blob/main/src/df.go)                              |
 | rmdir    | File utilities  | Removes empty directories                                                                    |
 | shred    | File utilities  | Overwrites a file to hide its contents, and optionally deletes it                            |
 | sync     | File utilities  | Flushes file system buffers                                                                  |
-| touch    | create file     | [wf](https://github.com/renick/glcoreutils/blob/main/src/wf.go)                              |
+| touch    | create file     | [wf](https://github.com/rendick/glcoreutils/blob/main/src/wf.go)                              |
 | truncate | File utilities  | Shrink or extend the size of a file to the specified size                                    |
 | vdir     | File utilities  | Is exactly like "`ls -l -b`". Files are by default listed in long format.                    |
 | b2sum    | Text utilities  | Computes and checks BLAKE2bBLAKE2b "BLAKE2b" message digest                                  |
@@ -74,7 +74,7 @@
 | false    | Shell utilities | Does nothing, but exits unsuccessfully                                                       |
 | groups   | Shell utilities | Prints the groupsGroup_identifier_Unix "Group identifier Unix" of which the user is a member |
 | hostid   | Shell utilities | Prints the numeric identifier for the current host                                           |
-| id       | Shell utilities | [usrid](https://github.com/renick/glcoreutils/blob/main/src/usrid.go)                        |
+| id       | Shell utilities | [usrid](https://github.com/rendick/glcoreutils/blob/main/src/usrid.go)                        |
 | link     | Shell utilities | Creates a linkHard_link "Hard link" to a file                                                |
 | logname  | Shell utilities | Print the user's login name                                                                  |
 | nice     | Shell utilities | Modifies schedulingScheduling_computing "Scheduling computing" priority                      |
@@ -101,7 +101,7 @@
 | unlink   | Shell utilities | Removes the specified file using the `unlink` function                                       |
 | uptime   | Shell utilities | Tells how long the system has been running                                                   |
 | users    | Shell utilities | Prints the user names of users currently logged into the current host                        |
-| who      | Shell utilities | [alluser](https://github.com/renick/glcoreutils/blob/main/src/alluser.go)                    |
-| whoami   | Shell utilities | [user](https://github.com/renick/glcoreutils/blob/main/src/user.go)                          |
-| yes      | Shell utilities | [ok](https://github.com/renick/glcoreutils/blob/main/src/ok.go)                                                                   |
+| who      | Shell utilities | [alluser](https://github.com/rendick/glcoreutils/blob/main/src/alluser.go)                    |
+| whoami   | Shell utilities | [user](https://github.com/rendick/glcoreutils/blob/main/src/user.go)                          |
+| yes      | Shell utilities | [ok](https://github.com/rendick/glcoreutils/blob/main/src/ok.go)                                                                   |
 
