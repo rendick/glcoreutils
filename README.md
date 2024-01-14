@@ -1,5 +1,7 @@
 # glcoreutils
 
+**2% / 100%**
+
 ### TODO
 
 |Name   |  Description | GLCU  |
