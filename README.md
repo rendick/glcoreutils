@@ -1,6 +1,6 @@
 # glcoreutils
 
-**Progress: 1.96%**
+**Progress: 2.94%**
 
 ### TODO
 
@@ -103,5 +103,5 @@
 | users    | Shell utilities | Prints the user names of users currently logged into the current host                        |
 | who      | Shell utilities | [alluser](https://github.com/renick/glcoreutils/blob/main/src/alluser.go)                    |
 | whoami   | Shell utilities | [user](https://github.com/renick/glcoreutils/blob/main/src/user.go)                          |
-| yes      | Shell utilities | Prints a string repeatedly                                                                   |
+| yes      | Shell utilities | [ok](https://github.com/renick/glcoreutils/blob/main/src/ok.go)                                                                   |
 
