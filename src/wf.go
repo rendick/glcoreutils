@@ -7,20 +7,24 @@ import (
 
 var (
 	wf_help = `
-Usage: wf [filename]
+Usage: wf [OPTION or FILENAME]
 
 --help or -h:     help 
 --version or -v:  version
 
-GL coreutils online: <https://github.com/rendick/glcoreutils/>
+GL coreutils: <https://github.com/rendick/glcoreutils/>
 	`
-	version = "0.1v"
+	wf_version = "0.1v"
 )
+
+func help() {
+	fmt.Println("wf: missing file\nUsage: wf [OPTION of FILENAME]\nTry --help for more information")
+}
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println("Usage: fc [filename]")
-		os.Exit(1)
+		help()
+		os.Exit(0)
 	}
 
 	filename := os.Args[1]
@@ -28,7 +32,7 @@ func main() {
 	if filename == "--help" || filename == "-h" {
 		fmt.Println(wf_help)
 	} else if filename == "--version" || filename == "-v" {
-		fmt.Println(version)
+		fmt.Println(wf_version)
 	} else {
 		file, err := os.Create(filename)
 		if err != nil {

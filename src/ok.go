@@ -7,13 +7,14 @@ import (
 
 var (
 	ok_help = ` 
-Usage: ok [text]
+Usage: ok [OPTION or TEXT]
 
 --help or -h:     help 
 --version or -v:  version
 
-GL coreutils online: <https://github.com/rendick/glcoreutils/>
+GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
+	ok_version = "0.1v"
 )
 
 func main() {

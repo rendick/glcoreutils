@@ -15,13 +15,14 @@ import (
 var (
 	// Info
 	dog_help = ` 
-Usage: dog [filename]
+Usage: dog [OPTION or FILENAME]
 
 --help or -h:     help 
 --version or -v:  version
 
-GL coreutils online: <https://github.com/rendick/glcoreutils/>
+GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
+	dog_version = "0.1v"
 
 	// Color
 	Reset = "\033[0m"
@@ -30,7 +31,7 @@ GL coreutils online: <https://github.com/rendick/glcoreutils/>
 )
 
 func help() {
-	fmt.Println("dog: missing file\nUsage: dog: [filename]\nTry --help for more information")
+	fmt.Println("dog: missing file\nUsage: dog: [OPTION of FILENAME]\nTry --help for more information")
 }
 
 func main() {
@@ -44,7 +45,7 @@ func main() {
 	if filename == "--help" || filename == "-h" {
 		fmt.Println(dog_help)
 	} else if filename == "--version" || filename == "-v" {
-		fmt.Println("0.1v")
+		fmt.Println(dog_version)
 	} else {
 		// Count lines
 		file_count, err := os.Open(filename)
