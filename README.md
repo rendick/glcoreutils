@@ -1,8 +1,12 @@
 # glcoreutils
 
-**Progress [5/98]: 4.9%**
+**Progress [6/98]: 5.88%**
 
 ### TODO
+
+- [] To rewrite the arguments in src/.go from `if else` to `try catch`
+- [] To write the `-n` argument for src/dog.go to count and mark each line
+- [] To create goroutines for each script in src/ 
 
 | Name     | Description     | GLCU                                                                                         |
 | -------- | --------------- | -------------------------------------------------------------------------------------------- |
@@ -64,7 +68,7 @@
 | arch     | Shell utilities | Prints machine hardware name same as uname -m                                                |
 | basename | Shell utilities | Removes the path prefix from a given pathname                                                |
 | chroot   | Shell utilities | Changes the root directory                                                                   |
-| date     | Shell utilities | Prints or sets the system date and time                                                      |
+| date     | Shell utilities | [now](https://github.com/rendick/glcoreutils/blob/main/src/now.go)                         |
 | dirname  | Shell utilities | Strips non-directory suffix from file name                                                   |
 | du       | Shell utilities | Shows disk usage on file systems                                                             |
 | echo     | Shell utilities | Displays a specified line of text                                                            |
@@ -74,7 +78,7 @@
 | false    | Shell utilities | Does nothing, but exits unsuccessfully                                                       |
 | groups   | Shell utilities | Prints the groupsGroup_identifier_Unix "Group identifier Unix" of which the user is a member |
 | hostid   | Shell utilities | Prints the numeric identifier for the current host                                           |
-| id       | Shell utilities | [usrid](https://github.com/rendick/glcoreutils/blob/main/src/usrid.go)                        |
+| id       | Shell utilities | [usrid](https://github.com/rendick/glcoreutils/blob/main/src/usrid.go)                       |
 | link     | Shell utilities | Creates a linkHard_link "Hard link" to a file                                                |
 | logname  | Shell utilities | Print the user's login name                                                                  |
 | nice     | Shell utilities | Modifies schedulingScheduling_computing "Scheduling computing" priority                      |
