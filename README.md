@@ -4,7 +4,7 @@
 
 ### TODO
 
-- [ ] To rewrite the arguments in src/.go from `if else` to `try catch`
+- [x] To rewrite the arguments in src/.go from `if else` to `try catch`
 - [ ] To write the `-n` argument for src/dog.go to count and mark each line
 - [ ] To create goroutines for each script in src/ 
 
