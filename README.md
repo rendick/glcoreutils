@@ -1,12 +1,13 @@
 # glcoreutils
 
-**Progress [6/98]: 5.88%**
+**Progress [9/98]: 8.82%**
 
 ### TODO
 
 - [x] To rewrite the arguments in src/.go from `if else` to `try catch`
 - [ ] To write the `-n` argument for src/dog.go to count and mark each line
 - [ ] To create goroutines for each script in src/ 
+- [ ] Create a colorful output in src/vd.go to display a type 
 
 | Name     | Description     | GLCU                                                                                         |
 | -------- | --------------- | -------------------------------------------------------------------------------------------- |
@@ -19,7 +20,7 @@
 | df       | File utilities  | Shows disk free space on file systems                                                        |
 | install  | File utilities  | Copies files and set attributes                                                              |
 | ln       | File utilities  | Creates a link to a file                                                                     |
-| ls       | File utilities  | [vd](https://github.com/rendick/glcoreutils/blob/main/src/vf.go)                              |
+| ls       | File utilities  | [vd](https://github.com/rendick/glcoreutils/blob/main/src/vd.go)                              |
 | mkdir    | File utilities  | [crdir](https://github.com/rendick/glcoreutils/blob/main/src/crdir.go)                                                                          |
 | mkfifo   | File utilities  | Makes named pipesNamed_pipe "Named pipe" FIFOs                                               |
 | mknod    | File utilities  | Makes block or character special filesDevice_node "Device node"                              |
@@ -88,7 +89,7 @@
 | pinky    | Shell utilities | A lightweight version of fingerFinger_protocol "Finger protocol"                             |
 | printenv | Shell utilities | Prints environment variablesEnvironment_variable "Environment variable"                      |
 | printf   | Shell utilities | Formats and prints data                                                                      |
-| pwd      | Shell utilities | Prints the current working directoryCurrent_working_directory "Current working directory"    |
+| pwd      | Shell utilities | [cwd](https://github.com/rendick/glcoreutils/blob/main/src/cwd.go)                           |
 | readlink | Shell utilities | Displays value of a symbolic linkSymbolic_link "Symbolic link"                               |
 | runcon   | Shell utilities | Run command with specified security context                                                  |
 | seq      | Shell utilities | Prints a sequence of numbers                                                                 |
