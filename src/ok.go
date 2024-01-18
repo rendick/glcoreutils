@@ -21,18 +21,19 @@ func main() {
 	if len(os.Args) != 2 {
 		for {
 			fmt.Println("ok")
-
 		}
 	}
-	x := os.Args[1]
 
-	if x == "--help" || x == "-h" {
+	filename := os.Args[1]
+
+	switch filename {
+	case "--help", "-help", "-h", "--h":
 		fmt.Println(ok_help)
-	} else if x == "--version" || x == "-v" {
-		fmt.Println("0.1v")
-	} else {
+	case "--version", "-version", "-v", "--v":
+		fmt.Println(ok_version)
+	default:
 		for {
-			fmt.Println(x)
+			fmt.Println(filename)
 		}
 	}
 }

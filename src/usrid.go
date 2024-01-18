@@ -31,25 +31,26 @@ func main() {
 
 	filename := os.Args[1]
 
-	if filename == "--help" || filename == "-help" || filename == "-h" || filename == "--h" {
+	switch filename {
+	case "--help", "-help", "-h", "--h":
 		fmt.Println(usrid_help)
-	} else if filename == "--version" || filename == "-version" || filename == "-v" || filename == "--v" {
+	case "--version", "-version", "-v", "--v":
 		fmt.Println(usrid_version)
-	} else if filename == "--group" || filename == "-group" || filename == "-g" || filename == "--g" {
+	case "--group", "-group", "-g", "--g":
 		group_usrid, err := exec.Command("sh", "-c", "awk -F: '$3==1000 {print $3}' /etc/group").Output()
 		if err != nil {
 			panic(err)
 		} else {
 			fmt.Printf("%s", group_usrid)
 		}
-	} else if filename == "--groups" || filename == "-groups" || filename == "-G" || filename == "--G" {
+	case "--groups", "-groups", "-G", "--G":
 		groups_usrid, err := exec.Command("sh", "-c", "awk -F: '$3==998 {print $3} $3==1000 {print $3}' /etc/group").Output()
 		if err != nil {
 			panic(err)
 		} else {
 			fmt.Printf("%s", groups_usrid)
 		}
-	} else if filename == "--user" || filename == "-user" || filename == "-u" || filename == "--u" {
+	case "--user", "-user", "-u", "--u":
 		user_usrid, err := exec.Command("sh", "-c", "awk -F: '$3==1000 {print $3}' /etc/group").Output()
 		if err != nil {
 			panic(err)

@@ -41,25 +41,22 @@ func main() {
 	}
 
 	filename := os.Args[1]
-
-	if filename == "--help" || filename == "-h" {
+	switch filename {
+	case "--help", "-help", "-h", "--h":
 		fmt.Println(dog_help)
-	} else if filename == "--version" || filename == "-v" {
+	case "--version", "-version", "-v", "--v":
 		fmt.Println(dog_version)
-	} else {
-		// Count lines
+	default:
 		file_count, err := os.Open(filename)
 		if err != nil {
 			os.Exit(0)
 		}
 
-		// Read file
 		file, err := ioutil.ReadFile(filename)
 		fmt.Println(string(file))
 		scanner := bufio.NewScanner(file_count)
 		scanner.Split(bufio.ScanLines)
 
-		// getting the number of lines
 		var count int
 		for scanner.Scan() {
 			count++
@@ -67,7 +64,8 @@ func main() {
 		if err := scanner.Err(); err != nil {
 			fmt.Println(err)
 			return
+		} else {
+			fmt.Printf(Red+"Number of lines in file: "+Reset+"%d", count)
 		}
-		fmt.Printf(Red+"Number of lines in file: "+Reset+"%d", count)
 	}
 }
