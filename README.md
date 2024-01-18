@@ -15,7 +15,7 @@
 | chgrp    | File utilities  | Changes file group ownership                                                                 |
 | chown    | File utilities  | Changes file ownership                                                                       |
 | chmod    | File utilities  | Changes the permissions of a file or directory                                               |
-| cp       | File utilities  | [cf](https://github.com/rendick/glcoreutils/blob/main/src/cf.go)                              |
+| cp       | File utilities  | Copy file or directory                             |
 | dd       | File utilities  | Copies and converts a file                                                                   |
 | df       | File utilities  | Shows disk free space on file systems                                                        |
 | install  | File utilities  | Copies files and set attributes                                                              |
