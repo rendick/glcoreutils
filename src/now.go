@@ -33,23 +33,29 @@ func main() {
 	}
 
 	filename := os.Args[1]
-
-	if filename == "--help" || filename == "-help" || filename == "-h" || filename == "--h" {
+	switch filename {
+	case "--help", "-help", "-h", "--h":
 		fmt.Println(now_help)
-	} else if filename == "--version" || filename == "-version" || filename == "-v" || filename == "--v" {
+
+	case "--version", "-version", "-v", "--v":
 		fmt.Println(now_version)
-	} else if filename == "--day" || filename == "-day" || filename == "-d" || filename == "-d" {
+
+	case "--day", "-day", "-d", "--d":
 		fmt.Println(time.Now().Weekday())
-	} else if filename == "--month" || filename == "-month" || filename == "-m" || filename == "--m" {
+
+	case "--month", "-month", "-m", "--m":
 		fmt.Println(time.Now().Month())
-	} else if filename == "--year" || filename == "-year" || filename == "-y" || filename == "--y" {
+
+	case "--year", "-year", "-y", "--y":
 		fmt.Println(time.Now().Year())
-	} else if filename == "--hour" || filename == "-hour" || filename == "-H" || filename == "--H" {
+
+	case "--hour", "-hour", "-H", "--H":
 		fmt.Println(time.Now().Hour())
-	} else if filename == "--century" || filename == "-century" || filename == "-c" || filename == "--c" {
+
+	case "--century", "-century", "-c", "--c":
 		fmt.Println((time.Now().Year() + 99) / 100)
-	} else if filename == "--week" || filename == "-week" || filename == "-w" || filename == "--w" {
+
+	case "--week", "-week", "-w", "--w":
 		fmt.Println(time.Now().ISOWeek())
 	}
-
 }

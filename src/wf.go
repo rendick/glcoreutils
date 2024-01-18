@@ -29,19 +29,22 @@ func main() {
 
 	filename := os.Args[1]
 
-	if filename == "--help" || filename == "-h" {
+	switch filename {
+	case "--help", "-help", "-h", "--h":
 		fmt.Println(wf_help)
-	} else if filename == "--version" || filename == "-v" {
+
+	case "--version", "-version", "-v", "--v":
 		fmt.Println(wf_version)
-	} else {
+
+	default:
 		file, err := os.Create(filename)
 		if err != nil {
 			fmt.Println("Error creating file:", err)
 			os.Exit(1)
+		} else {
+			defer file.Close()
+
+			fmt.Println("File written: ", filename)
 		}
-		defer file.Close()
-
-		fmt.Println("File written: ", filename)
 	}
-
 }
