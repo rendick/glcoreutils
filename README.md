@@ -20,7 +20,7 @@
 | install  | File utilities  | Copies files and set attributes                                                              |
 | ln       | File utilities  | Creates a link to a file                                                                     |
 | ls       | File utilities  | [vd](https://github.com/rendick/glcoreutils/blob/main/src/vf.go)                              |
-| mkdir    | File utilities  | Creates a directory                                                                          |
+| mkdir    | File utilities  | [crdir](https://github.com/rendick/glcoreutils/blob/main/src/crdir.go)                                                                          |
 | mkfifo   | File utilities  | Makes named pipesNamed_pipe "Named pipe" FIFOs                                               |
 | mknod    | File utilities  | Makes block or character special filesDevice_node "Device node"                              |
 | mktemp   | File utilities  | Creates a temporary fileTemporary_file "Temporary file" or directory                         |

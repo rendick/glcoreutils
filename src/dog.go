@@ -31,7 +31,7 @@ GL coreutils: <https://github.com/rendick/glcoreutils/>
 )
 
 func help() {
-	fmt.Println("dog: missing file\nUsage: dog: [OPTION of FILENAME]\nTry --help for more information")
+	fmt.Println("dog: missing file\nUsage: dog [OPTION or FILENAME]\nTry --help for more information")
 }
 
 func main() {
