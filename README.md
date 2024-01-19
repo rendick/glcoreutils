@@ -1,6 +1,6 @@
 # glcoreutils
 
-**Progress [9/98]: 8.82%**
+**Progress [10/98]: 9.8%**
 
 ### TODO
 
