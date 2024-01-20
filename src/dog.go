@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"time"
 )
 
 var (
@@ -38,6 +39,7 @@ func help() {
 
 func dog_default() {
 	filename := os.Args[1]
+
 	switch filename {
 	case "--help", "-help", "-h", "--h":
 		fmt.Println(dog_help)
@@ -47,17 +49,17 @@ func dog_default() {
 		file, err := ioutil.ReadFile(filename)
 		if err != nil {
 			os.Exit(0)
+		} else {
+			fmt.Println(string(file))
 		}
-		fmt.Println(string(file))
 	}
-
 }
 
 func dog_count() {
 	filename := os.Args[1]
-	filename_arg := os.Args[2]
+	args := os.Args[2]
 
-	switch filename_arg {
+	switch args {
 	case "-n":
 		file_count, err := os.Open(filename)
 		if err != nil {
@@ -84,13 +86,16 @@ func dog_count() {
 
 func main() {
 	if len(os.Args) == 2 {
-		dog_default()
+		go dog_default()
+		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	} else if len(os.Args) == 3 {
-		dog_count()
+		go dog_count()
+		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	} else {
-		help()
+		go help()
+		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	}
 
