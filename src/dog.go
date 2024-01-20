@@ -20,9 +20,11 @@ Usage: dog [OPTION or FILENAME]
 --help or -h:     help 
 --version or -v:  version
 
+--number or -n:	  counts the lines 
+
 GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
-	dog_version = "0.1v"
+	dog_version = "0.2v"
 
 	// Color
 	Reset = "\033[0m"
@@ -31,15 +33,10 @@ GL coreutils: <https://github.com/rendick/glcoreutils/>
 )
 
 func help() {
-	fmt.Println("dog: missing file\nUsage: dog [OPTION or FILENAME]\nTry --help for more information")
+	fmt.Println("dog: missing file\nUsage: dog [FILENAME or OPTION]\nTry --help for more information")
 }
 
-func main() {
-	if len(os.Args) != 2 {
-		help()
-		os.Exit(0)
-	}
-
+func dog_default() {
 	filename := os.Args[1]
 	switch filename {
 	case "--help", "-help", "-h", "--h":
@@ -47,6 +44,21 @@ func main() {
 	case "--version", "-version", "-v", "--v":
 		fmt.Println(dog_version)
 	default:
+		file, err := ioutil.ReadFile(filename)
+		if err != nil {
+			os.Exit(0)
+		}
+		fmt.Println(string(file))
+	}
+
+}
+
+func dog_count() {
+	filename := os.Args[1]
+	filename_arg := os.Args[2]
+
+	switch filename_arg {
+	case "-n":
 		file_count, err := os.Open(filename)
 		if err != nil {
 			os.Exit(0)
@@ -65,7 +77,21 @@ func main() {
 			fmt.Println(err)
 			return
 		} else {
-			fmt.Printf(Red+"Number of lines in file: "+Reset+"%d", count)
+			fmt.Println(Red+"Number of lines in file: "+Reset, count)
 		}
 	}
+}
+
+func main() {
+	if len(os.Args) == 2 {
+		dog_default()
+		os.Exit(0)
+	} else if len(os.Args) == 3 {
+		dog_count()
+		os.Exit(0)
+	} else {
+		help()
+		os.Exit(0)
+	}
+
 }
