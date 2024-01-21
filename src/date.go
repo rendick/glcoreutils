@@ -7,9 +7,8 @@ import (
 )
 
 var (
-	// Info
-	now_help = ` 
-Usage: now [OPTION]
+	date_help = `
+Usage: date [OPTION]
 
 -d or --day: prints the full name of the weekday (e.g., Sunday)
 -m or --month: prints the full name of the month (e.g,, January)
@@ -23,39 +22,74 @@ Usage: now [OPTION]
 
 GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
-	now_version = "0.1v"
+	date_version = "0.1v"
 )
+
+func date() {
+	fmt.Println(time.Now().Format(time.UnixDate))
+}
+
+func date_day() {
+	fmt.Println(time.Now().Weekday())
+}
+
+func date_month() {
+	fmt.Println(time.Now().Month())
+}
+
+func date_year() {
+	fmt.Println(time.Now().Year())
+}
+
+func date_hour() {
+	fmt.Println(time.Now().Hour())
+}
+
+func date_century() {
+	fmt.Println((time.Now().Year() + 99) / 100)
+}
+
+func date_week() {
+	fmt.Println(time.Now().ISOWeek())
+}
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println(time.Now().Format(time.UnixDate))
+		go date()
+		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	}
 
 	filename := os.Args[1]
 	switch filename {
 	case "--help", "-help", "-h", "--h":
-		fmt.Println(now_help)
+		fmt.Println(date_help)
 
 	case "--version", "-version", "-v", "--v":
-		fmt.Println(now_version)
+		fmt.Println(date_version)
 
 	case "--day", "-day", "-d", "--d":
-		fmt.Println(time.Now().Weekday())
+		go date_day()
+		time.Sleep(time.Millisecond)
 
 	case "--month", "-month", "-m", "--m":
-		fmt.Println(time.Now().Month())
+		go date_month()
+		time.Sleep(time.Millisecond)
 
 	case "--year", "-year", "-y", "--y":
-		fmt.Println(time.Now().Year())
+		go date_year()
+		time.Sleep(time.Millisecond)
 
 	case "--hour", "-hour", "-H", "--H":
-		fmt.Println(time.Now().Hour())
+		go date_hour()
+		time.Sleep(time.Millisecond)
 
 	case "--century", "-century", "-c", "--c":
-		fmt.Println((time.Now().Year() + 99) / 100)
+		go date_century()
+		time.Sleep(time.Millisecond)
 
 	case "--week", "-week", "-w", "--w":
-		fmt.Println(time.Now().ISOWeek())
+		go date_week()
+		time.Sleep(time.Millisecond)
 	}
 }

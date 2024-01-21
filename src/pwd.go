@@ -3,38 +3,43 @@ package main
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
 var (
-	// Info
-	cwd_help = ` 
-Usage: cwd [OPTION]
+	pwd_help = ` 
+Usage: pwd [OPTION]
 
 --help or -h:     help 
 --version or -v:  version
 
 GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
-	cwd_version = "0.1v"
+	pwd_version = "0.1v"
 )
+
+func pwd() {
+	pwd, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Println(pwd)
+		os.Exit(0)
+	}
+}
 
 func main() {
 	if len(os.Args) != 2 {
-		cwd, err := os.Getwd()
-		if err != nil {
-			panic(err)
-		} else {
-			fmt.Println(cwd)
-			os.Exit(0)
-		}
+		go pwd()
+		time.Sleep(time.Millisecond)
 	}
 
 	filename := os.Args[1]
 
 	switch filename {
 	case "--help", "-help", "-h", "--h":
-		fmt.Println(cwd_help)
+		fmt.Println(pwd_help)
 	case "--version", "-version", "-v", "--v":
-		fmt.Println(cwd_version)
+		fmt.Println(pwd_version)
 	}
 }

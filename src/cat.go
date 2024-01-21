@@ -1,8 +1,3 @@
-// {{ TODO:
-// 1. `-n` flag for counting lines
-// 2.
-// }
-
 package main
 
 import (
@@ -14,9 +9,8 @@ import (
 )
 
 var (
-	// Info
-	dog_help = ` 
-Usage: dog [OPTION or FILENAME]
+	cat_help = ` 
+Usage: cat [OPTION or FILENAME]
 
 --help or -h:     help 
 --version or -v:  version
@@ -25,26 +19,25 @@ Usage: dog [OPTION or FILENAME]
 
 GL coreutils: <https://github.com/rendick/glcoreutils/>
 `
-	dog_version = "0.2v"
+	cat_version = "0.1v"
 
-	// Color
 	Reset = "\033[0m"
 	Bold  = "\033[1m"
 	Red   = "\033[31m"
 )
 
 func help() {
-	fmt.Println("dog: missing file\nUsage: dog [FILENAME or OPTION]\nTry --help for more information")
+	fmt.Println("cat: missing file\nUsage: cat [FILENAME or OPTION]\nTry --help for more information")
 }
 
-func dog_default() {
+func cat_default() {
 	filename := os.Args[1]
 
 	switch filename {
 	case "--help", "-help", "-h", "--h":
-		fmt.Println(dog_help)
+		fmt.Println(cat_help)
 	case "--version", "-version", "-v", "--v":
-		fmt.Println(dog_version)
+		fmt.Println(cat_version)
 	default:
 		file, err := ioutil.ReadFile(filename)
 		if err != nil {
@@ -55,7 +48,7 @@ func dog_default() {
 	}
 }
 
-func dog_count() {
+func cat_count() {
 	filename := os.Args[1]
 	args := os.Args[2]
 
@@ -86,11 +79,11 @@ func dog_count() {
 
 func main() {
 	if len(os.Args) == 2 {
-		go dog_default()
+		go cat_default()
 		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	} else if len(os.Args) == 3 {
-		go dog_count()
+		go cat_count()
 		time.Sleep(time.Millisecond)
 		os.Exit(0)
 	} else {
