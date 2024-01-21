@@ -1,6 +1,5 @@
 | GNU      | Description     | GLCU                                                                                         |
 | -------- | --------------- | -------------------------------------------------------------------------------------------- |
-| chcon    | File utilities  | Changes file security context SELinuxSELinux "SELinux"                                       |
 | chgrp    | File utilities  | Changes file group ownership                                                                 |
 | chown    | File utilities  | Changes file ownership                                                                       |
 | chmod    | File utilities  | Changes the permissions of a file or directory                                               |
@@ -9,24 +8,24 @@
 | df       | File utilities  | Shows disk free space on file systems                                                        |
 | install  | File utilities  | Copies files and set attributes                                                              |
 | ln       | File utilities  | Creates a link to a file                                                                     |
-| ls       | File utilities  | [vd](https://github.com/rendick/glcoreutils/blob/main/src/vd.go)                             |
-| mkdir    | File utilities  | [crdir](https://github.com/rendick/glcoreutils/blob/main/src/crdir.go)                       |
+| ls       | File utilities  | [ls](https://github.com/rendick/glcoreutils/blob/main/src/ls.go)                             |
+| mkdir    | File utilities  | [mkdir](https://github.com/rendick/glcoreutils/blob/main/src/mkdir.go)                       |
 | mkfifo   | File utilities  | Makes named pipesNamed_pipe "Named pipe" FIFOs                                               |
 | mknod    | File utilities  | Makes block or character special filesDevice_node "Device node"                              |
 | mktemp   | File utilities  | Creates a temporary fileTemporary_file "Temporary file" or directory                         |
-| mv       | File utilities  | [rf](https://github.com/rendick/glcoreutils/blob/main/src/rf.go)                             |
+| mv       | File utilities  | [mv](https://github.com/rendick/glcoreutils/blob/main/src/mv.go)                             |
 | realpath | File utilities  | Returns the resolved absolute or relative path for a file                                    |
-| rm       | File utilities  | [df](https://github.com/rendick/glcoreutils/blob/main/src/df.go)                             |
+| rm       | File utilities  | [rm](https://github.com/rendick/glcoreutils/blob/main/src/rm.go)                             |
 | rmdir    | File utilities  | Removes empty directories                                                                    |
 | shred    | File utilities  | Overwrites a file to hide its contents, and optionally deletes it                            |
 | sync     | File utilities  | Flushes file system buffers                                                                  |
-| touch    | create file     | [wf](https://github.com/rendick/glcoreutils/blob/main/src/wf.go)                             |
+| touch    | create file     | [touch](https://github.com/rendick/glcoreutils/blob/main/src/touch.go)                       |
 | truncate | File utilities  | Shrink or extend the size of a file to the specified size                                    |
 | vdir     | File utilities  | Is exactly like "`ls -l -b`". Files are by default listed in long format.                    |
 | b2sum    | Text utilities  | Computes and checks BLAKE2bBLAKE2b "BLAKE2b" message digest                                  |
 | base32   | Text utilities  | Encodes or decodes Base32Base32 "Base32", and prints result to standard output               |
 | base64   | Text utilities  | Encodes or decodes Base64Base64 "Base64", and prints result to standard output               |
-| cat      | Text utilities  | [dog](https://github.com/rendick/glcoreutils/blob/main/src/dog.go)                           |
+| cat      | Text utilities  | [cat](https://github.com/rendick/glcoreutils/blob/main/src/cat.go)                           |
 | cksum    | Text utilities  | Checksums IEEE Ethernet CRC-32 and count the bytes in a file.                                |
 | comm     | Text utilities  | Compares two sorted files line by line                                                       |
 | csplit   | Text utilities  | Splits a file into sections determined by context lines                                      |
@@ -58,7 +57,7 @@
 | arch     | Shell utilities | Prints machine hardware name same as uname -m                                                |
 | basename | Shell utilities | Removes the path prefix from a given pathname                                                |
 | chroot   | Shell utilities | Changes the root directory                                                                   |
-| date     | Shell utilities | [now](https://github.com/rendick/glcoreutils/blob/main/src/now.go)                           |
+| date     | Shell utilities | [date](https://github.com/rendick/glcoreutils/blob/main/src/date.go)                         |
 | dirname  | Shell utilities | Strips non-directory suffix from file name                                                   |
 | du       | Shell utilities | Shows disk usage on file systems                                                             |
 | echo     | Shell utilities | Displays a specified line of text                                                            |
@@ -68,7 +67,7 @@
 | false    | Shell utilities | Does nothing, but exits unsuccessfully                                                       |
 | groups   | Shell utilities | Prints the groupsGroup_identifier_Unix "Group identifier Unix" of which the user is a member |
 | hostid   | Shell utilities | Prints the numeric identifier for the current host                                           |
-| id       | Shell utilities | [usrid](https://github.com/rendick/glcoreutils/blob/main/src/usrid.go)                       |
+| id       | Shell utilities | [id](https://github.com/rendick/glcoreutils/blob/main/src/id.go)                             |
 | link     | Shell utilities | Creates a linkHard_link "Hard link" to a file                                                |
 | logname  | Shell utilities | Print the user's login name                                                                  |
 | nice     | Shell utilities | Modifies schedulingScheduling_computing "Scheduling computing" priority                      |
@@ -78,7 +77,7 @@
 | pinky    | Shell utilities | A lightweight version of fingerFinger_protocol "Finger protocol"                             |
 | printenv | Shell utilities | Prints environment variablesEnvironment_variable "Environment variable"                      |
 | printf   | Shell utilities | Formats and prints data                                                                      |
-| pwd      | Shell utilities | [cwd](https://github.com/rendick/glcoreutils/blob/main/src/cwd.go)                           |
+| pwd      | Shell utilities | [pwd](https://github.com/rendick/glcoreutils/blob/main/src/pwd.go)                           |
 | readlink | Shell utilities | Displays value of a symbolic linkSymbolic_link "Symbolic link"                               |
 | runcon   | Shell utilities | Run command with specified security context                                                  |
 | seq      | Shell utilities | Prints a sequence of numbers                                                                 |
@@ -95,7 +94,7 @@
 | unlink   | Shell utilities | Removes the specified file using the `unlink` function                                       |
 | uptime   | Shell utilities | Tells how long the system has been running                                                   |
 | users    | Shell utilities | Prints the user names of users currently logged into the current host                        |
-| who      | Shell utilities | [alluser](https://github.com/rendick/glcoreutils/blob/main/src/alluser.go)                   |
-| whoami   | Shell utilities | [user](https://github.com/rendick/glcoreutils/blob/main/src/user.go)                         |
-| yes      | Shell utilities | [ok](https://github.com/rendick/glcoreutils/blob/main/src/ok.go)                             |
+| who      | Shell utilities | [who](https://github.com/rendick/glcoreutils/blob/main/src/who.go)                           |  
+| whoami   | Shell utilities | [whoami](https://github.com/rendick/glcoreutils/blob/main/src/whoami.go)                     |
+| yes      | Shell utilities | [yes](https://github.com/rendick/glcoreutils/blob/main/src/yes.go)                           |
 
