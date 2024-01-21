@@ -1,11 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 
-rm -r ./bin
-sleep 1
+# Set the source and build directories
+src_directory="./src"
+build_directory="./build"
 
-go build src/dog.go && go build src/now.go && go build src/ok.go && go build src/user.go && go build src/usrid.go && go build src/wf.go && go build src/crdir.go && go build src/vd.go && go build src/cwd.go && go build src/rf.go
+# Create the build directory if it doesn't exist
+mkdir -p "$build_directory"
 
-sleep 1
+# Change to the source directory
+cd "$src_directory" || exit
 
-mkdir bin
-mv dog now ok user usrid wf crdir vd cwd rf ./bin
+# Find all .go files and build them
+for file in *.go; do
+    if [ -f "$file" ]; then
+        echo "Building: $file"
+        go build -o "$build_directory/$(basename "$file" .go)" "$file"
+        if [ $? -eq 0 ]; then
+            echo "Build successful: $file"
+        else
+            echo "Build failed: $file"
+        fi
+    fi
+done
