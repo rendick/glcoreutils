@@ -90,7 +90,7 @@
 | timeout  | Shell utilities | Run a command with a time limit                                                              |
 | true     | Shell utilities | Does nothing, but exits successfully                                                         |
 | tty      | Shell utilities | Prints terminalComputer_terminal "Computer terminal" name                                    |
-| uname    | Shell utilities | Prints system information                                                                    |
+| uname    | Shell utilities | [uname](https://github.com/rendick/glcoreutils/blob/main/src/uname.go)                       |
 | unlink   | Shell utilities | Removes the specified file using the `unlink` function                                       |
 | uptime   | Shell utilities | Tells how long the system has been running                                                   |
 | users    | Shell utilities | Prints the user names of users currently logged into the current host                        |
