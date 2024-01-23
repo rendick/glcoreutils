@@ -2,7 +2,7 @@
 
 What is this? - An alternative to the sometimes bloated GNU coreutils.
 
-**Progress [10/97]: 9.8%**
+**Progress [11/97]: 10.67%**
 
 ### TODO
 
