@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"fmt"
@@ -8,16 +8,20 @@ import (
 )
 
 var (
+	Color1 = "\033[31m"
+	Color2 = "\033[32m"
+	Color3 = "\033[33m"
+	Color4 = "\033[35m"
+
 	Reset = "\033[0m"
 )
 
-func yes() {
-
+func Yes() {
 	color_arr := map[int]string{
-		1: "\033[31m",
-		2: "\033[32m",
-		3: "\033[33m",
-		4: "\033[35m",
+		1: Color1,
+		2: Color2,
+		3: Color3,
+		4: Color4,
 	}
 
 	gen := rand.Perm(4)
@@ -33,8 +37,4 @@ func yes() {
 			}
 		}
 	}
-}
-
-func main() {
-	yes()
 }

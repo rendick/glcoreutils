@@ -1,7 +1,8 @@
+// deletion.go
+
 package cmd
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -9,10 +10,7 @@ import (
 	"path/filepath"
 )
 
-// sudo chmod 777 ~/.local/share/Trash
-
-func Deletion() {
-
+func Deletion(dir string) {
 	user, err := user.Current()
 	if err != nil {
 		log.Fatalf(err.Error())
@@ -20,14 +18,7 @@ func Deletion() {
 
 	username := user.Username
 
-	dir := flag.String("r", "", "folder")
-	flag.Parse()
-
-	if *dir == "" {
-		log.Fatal("Please provide a folder to delete using the -r flag.")
-	}
-
-	absDir, err := filepath.Abs(*dir)
+	absDir, err := filepath.Abs(dir)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -54,8 +45,4 @@ func Deletion() {
 	}
 
 	fmt.Printf("Moved %s to Trash: %s\n", absDir, trashDir)
-}
-
-func main() {
-	Deletion()
 }
