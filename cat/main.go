@@ -21,7 +21,7 @@ var (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run . <filename>")
+		fmt.Println("Usage: cat <filename>")
 		os.Exit(1)
 	}
 
